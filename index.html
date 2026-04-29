@@ -917,18 +917,25 @@
 
     .dyn-uinfo {
         flex: 1;
+        min-width: 0;
     }
 
     .dyn-uname {
         font-size: 10px;
         font-weight: 700;
         color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dyn-uloc {
         font-size: 8px;
         color: rgba(227, 243, 247, 0.5);
         margin-top: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dyn-chat-pill {
@@ -1319,6 +1326,28 @@
             50% {
                 transform: translateY(-6px);
             }
+        }
+
+        .dyn-crew-card {
+            padding: 8px 9px;
+        }
+
+        .dyn-card-top {
+            gap: 6px;
+        }
+
+        .dyn-chat-pill {
+            padding: 3px 7px;
+            font-size: 7.5px;
+        }
+
+        .dyn-card-body {
+            font-size: 7.5px;
+        }
+
+        .dyn-tag {
+            font-size: 6.5px;
+            padding: 2px 6px;
         }
     }/* MOBILE STATS */
     @media (max-width: 900px) {
