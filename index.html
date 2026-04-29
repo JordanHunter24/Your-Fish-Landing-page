@@ -1569,41 +1569,22 @@
         }
 
         #tournaments-close, #feed-close, #about-close, #community-close, #privacy-close, #terms-close, #contact-close {
-            width: 36px !important;
-            height: 36px !important;
-            top: calc(env(safe-area-inset-top, 0px) + 14px) !important;
-            right: calc(env(safe-area-inset-right, 0px) + 14px) !important;
-        }/* Tournaments tab bar — scroll horizontally with right-edge fade */
+            width: 40px !important;
+            height: 40px !important;
+            top: calc(env(safe-area-inset-top, 0px) + 20px) !important;
+            right: calc(env(safe-area-inset-right, 0px) + 16px) !important;
+            z-index: 10 !important;
+        }/* Tournaments tab bar — shrink so all 4 fit on phone */
 
         #tournaments-panel div:has( > .t-tab) {
-            overflow-x: auto;
             flex-wrap: nowrap !important;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            position: relative;
-        }
-
-        #tournaments-panel div:has( > .t-tab)::-webkit-scrollbar {
-            display: none;
-        }
-
-        #tournaments-panel div:has( > .t-tab)::after {
-            content: '';
-            flex-shrink: 0;
-            position: sticky;
-            right: 0;
-            align-self: stretch;
-            width: 36px;
-            margin-left: -36px;
-            background: linear-gradient(to right, rgba(0, 42, 56, 0) 0%, #002a38 90%);
-            pointer-events: none;
         }
 
         .t-tab {
             flex-shrink: 0;
-            padding: 8px 12px !important;
-            font-size: 10.5px !important;
-            letter-spacing: 0.3px !important;
+            padding: 6px 9px !important;
+            font-size: 9.5px !important;
+            letter-spacing: 0 !important;
         }/* Internal 2-col grids in modals collapse */
 
         #tournaments-panel div[style * ="grid-template-columns:1fr 1fr"], #about-panel div[style * ="grid-template-columns:1fr 1fr"] {
