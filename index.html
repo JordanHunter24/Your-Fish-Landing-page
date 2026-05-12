@@ -1650,7 +1650,7 @@
         }
     }/* MOBILE MODALS */
     @media (max-width: 600px) {
-        #tournaments-panel, #feed-panel, #about-panel, #community-panel, #privacy-panel, #terms-panel, #contact-panel {
+        #tournaments-panel, #feed-panel, #about-panel, #community-panel, #privacy-panel, #account-deletion-panel, #terms-panel, #contact-panel {
             width: 100% !important;
             max-width: 100% !important;
             height: 100vh !important;
@@ -1661,7 +1661,7 @@
             padding: calc(env(safe-area-inset-top, 0px) + 24px) calc(env(safe-area-inset-right, 0px) + 18px) calc(env(safe-area-inset-bottom, 0px) + 24px) calc(env(safe-area-inset-left, 0px) + 18px) !important;
         }
 
-        #tournaments-close, #feed-close, #about-close, #community-close, #privacy-close, #terms-close, #contact-close {
+        #tournaments-close, #feed-close, #about-close, #community-close, #privacy-close, #account-deletion-close, #terms-close, #contact-close {
             width: 40px !important;
             height: 40px !important;
             top: calc(env(safe-area-inset-top, 0px) + 20px) !important;
@@ -1688,7 +1688,7 @@
             grid-template-columns: repeat(2, 1fr) !important;
         }/* Modal headings shrink slightly */
 
-        #tournaments-panel h2, #feed-panel h2, #about-panel h2, #community-panel h2, #privacy-panel h2, #terms-panel h2, #contact-panel h2 {
+        #tournaments-panel h2, #feed-panel h2, #about-panel h2, #community-panel h2, #privacy-panel h2, #account-deletion-panel h2, #terms-panel h2, #contact-panel h2 {
             font-size: 24px !important;
         }
     }
@@ -2269,6 +2269,7 @@
         <div class="f-txt">&copy; 2026 Your Fish &middot; yourfish.com.au</div>
         <div class="f-links">
             <a href="#" id="privacy-link">Privacy</a>
+            <a href="#" id="account-deletion-link">Account Deletion</a>
             <a href="#" id="terms-link">Terms</a>
             <a href="#" id="contact-link">Contact</a>
         </div>
@@ -3292,6 +3293,41 @@
         </div>
     </div>
 
+    <!-- ACCOUNT DELETION MODAL -->
+    <div id="account-deletion-modal" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;">
+        <div id="account-deletion-backdrop" style="position:absolute;inset:0;background:rgba(0,20,30,0.88);backdrop-filter:blur(8px);"></div>
+        <div id="account-deletion-panel" style="position:relative;z-index:1;background:linear-gradient(160deg,#002a38 0%,#001e2b 100%);border:1px solid rgba(243,179,64,0.18);border-radius:24px;padding:44px 48px;max-width:720px;width:92%;max-height:88vh;overflow-y:auto;box-shadow:0 40px 80px rgba(0,0,0,0.6);transform:translateY(30px);opacity:0;transition:transform 0.4s cubic-bezier(.22,1,.36,1),opacity 0.4s ease;">
+            <button id="account-deletion-close" style="position:absolute;top:18px;right:20px;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+
+            <div style="margin-bottom:24px;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#F3B340;text-transform:uppercase;margin-bottom:10px;">Account</div>
+                <h2 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:32px;color:#fff;margin:0;line-height:1.15;">Account Deletion</h2>
+                <p style="color:rgba(227,243,247,0.5);font-size:12px;margin:10px 0 0;">How to delete your account and what happens to your data.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px 28px;margin-bottom:16px;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#F3B340;text-transform:uppercase;margin-bottom:14px;">Delete Account Steps</div>
+                <ol style="color:rgba(227,243,247,0.75);font-size:14px;line-height:1.85;margin:0;padding-left:20px;">
+                    <li>Open the Your Fish app.</li>
+                    <li>Click the navigation hamburger menu in the top right hand corner.</li>
+                    <li>Click on settings.</li>
+                    <li>Click delete account in the bottom left hand corner.</li>
+                    <li>
+                        You can also email us at 
+                        <a href="mailto:yourfishapp@gmail.com" style="color:#F3B340;text-decoration:none;">yourfishapp@gmail.com</a>
+                         to delete your account.
+                    </li>
+                </ol>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px 28px;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#F3B340;text-transform:uppercase;margin-bottom:14px;">Types of Data That Will Be Deleted and Kept</div>
+                <p style="color:rgba(227,243,247,0.75);font-size:14px;line-height:1.75;margin:0 0 12px;">When your account is deleted, all of your data that was initially stored when you signed up will be deleted such as your sign up entry details and profile page.</p>
+                <p style="color:rgba(227,243,247,0.75);font-size:14px;line-height:1.75;margin:0;">When your account is deleted, the data that will remain will be the posts you have shared and the fish you have tagged.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- TERMS MODAL -->
     <div id="terms-modal" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;">
         <div id="terms-backdrop" style="position:absolute;inset:0;background:rgba(0,20,30,0.88);backdrop-filter:blur(8px);"></div>
@@ -3394,6 +3430,7 @@
         document.getElementById(closeId).addEventListener('click', close);
     }
     wireModal('privacy-link', 'privacy-modal', 'privacy-panel', 'privacy-backdrop', 'privacy-close');
+    wireModal('account-deletion-link', 'account-deletion-modal', 'account-deletion-panel', 'account-deletion-backdrop', 'account-deletion-close');
     wireModal('terms-link', 'terms-modal', 'terms-panel', 'terms-backdrop', 'terms-close');
     wireModal('contact-link', 'contact-modal', 'contact-panel', 'contact-backdrop', 'contact-close');
     </script>
